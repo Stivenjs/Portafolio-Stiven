@@ -1,28 +1,27 @@
 ---
-import Layout from "@/layouts/Layout.astro"
+import Layout from "@/layouts/Layout.astro";
 
-import AboutMe from "@/components/AboutMe.astro"
-import Briefcase from "@/components/icons/Briefcase.astro"
-import CodeIcon from "@/components/icons/Code.astro"
-import Experience from "@/components/Experience.astro"
-import ProfileCheck from "@/components/icons/ProfileCheck.astro"
-import Projects from "@/components/Projects.astro"
-import SectionContainer from "@/components/SectionContainer.astro"
-import Hero from "@/components/Hero.astro"
-import TitleSection from "@/components/TitleSection.astro"
+import AboutMe from "@/components/AboutMe.astro";
+import Briefcase from "@/components/icons/Briefcase.astro";
+import CodeIcon from "@/components/icons/Code.astro";
+import Experience from "@/components/Experience.astro";
+import ProfileCheck from "@/components/icons/ProfileCheck.astro";
+import Projects from "@/components/Projects.astro";
+import SectionContainer from "@/components/SectionContainer.astro";
+import Hero from "@/components/Hero.astro";
+import TitleSection from "@/components/TitleSection.astro";
 ---
 
 <Layout
-  title="Porfolio de Stiven Jaime - Desarrollador y Programador Web con 1 año de experiencia"
-  description="Contrata a Stiven Jaime para crear tu aplicación web o móvil. Desarrollador Web . Especializado en crear aplicaciones únicas."
+  title="Portafolio de King Devs - Desarrolladores de Aplicaciones Web y Móviles"
+  description="Contrata a King Devs, un equipo de desarrolladores especializados en crear aplicaciones web y móviles personalizadas."
 >
   <main class="px-4">
     <SectionContainer class="py-16 md:py-36">
-      <Hero>
-      </slot>
-    </Hero>
+      <Hero />
     </SectionContainer>
-    <div class="space-y-24">
+  </main>
+  <div class="space-y-24">
     <SectionContainer id="experiencia">
       <TitleSection>
         <Briefcase class="size-8" />
@@ -42,10 +41,9 @@ import TitleSection from "@/components/TitleSection.astro"
     <SectionContainer id="sobre-mi">
       <TitleSection>
         <ProfileCheck class="size-8" />
-        Sobre mí
+        Sobre nosotros
       </TitleSection>
       <AboutMe />
     </SectionContainer>
   </div>
-  </main>
 </Layout>

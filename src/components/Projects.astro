@@ -1,11 +1,17 @@
 ---
-import GitHub from "./icons/GitHub.astro"
-import NextJS from "./icons/NextJS.astro"
-import ReactJS from "./icons/ReactJS.astro"
-import Tailwind from "./icons/Tailwind.astro"
-import Link from "./icons/Link.astro"
-import LinkButton from "./LinkButton.astro"
-
+import GitHub from "./icons/GitHub.astro";
+import NextJS from "./icons/NextJS.astro";
+import ReactJS from "./icons/ReactJS.astro";
+import Tailwind from "./icons/Tailwind.astro";
+import Link from "./icons/Link.astro";
+import LinkButton from "./LinkButton.astro";
+import Firebase from "./icons/Firebase.astro";
+import ExpressJS from "./icons/ExpressJS.astro";
+import Socket from "./icons/Socket.astro";
+import Postgres from "./icons/Postgres.astro";
+import Azure from "./icons/Azure.astro";
+import Vercel from "./icons/Vercel.astro";
+import Railway from "./icons/Railway.astro";
 const TAGS = {
   NEXT: {
     name: "Next.js",
@@ -17,72 +23,138 @@ const TAGS = {
     class: "bg-[#003159] text-white",
     icon: Tailwind,
   },
-  REACT:{
+  REACT: {
     name: "React.js",
     class: "bg-black text-white",
     icon: ReactJS,
-  }
-}
+  },
+  FIREBASE: {
+    name: "Firebase",
+    class: "bg-black text-[#FFC300]",
+    icon: Firebase,
+  },
+  EXPRESS: {
+    name: "Express.js",
+    class: "bg-black text-white",
+    icon: ExpressJS,
+  },
+  SOCKET: {
+    name: "Socket.io",
+    class: "bg-black",
+    icon: Socket,
+  },
+  POSTGRES: {
+    name: "PostgreSQL",
+    class: "bg-[#d5d8dc] text-[#003159]",
+    icon: Postgres,
+  },
+  AZURE: {
+    name: "Azure",
+    class: "bg-black text-white",
+    icon: Azure,
+  },
+  VERCEL: {
+    name: "Vercel",
+    class: "bg-black text-white",
+    icon: Vercel,
+  },
+  RAILWAY: {
+    name: "Railway",
+    class: "bg-black text-white",
+    icon: Railway,
+  },
+};
+
 const PROJECTS = [
   {
     title: "Clima en Tiempo Real 🌦️",
     description:
-      "Este proyecto permite consultar el clima en tiempo real para cualquier ciudad ingresada por el usuario. Utiliza una API para obtener datos meteorológicos y muestra la información relevante de manera intuitiva.",
+      "Esta aplicación permite a los usuarios consultar el clima en tiempo real para cualquier ciudad. Desarrollada en equipo, integra una API de datos meteorológicos y presenta la información de forma intuitiva y precisa.",
     link: "https://consultareltiempo.netlify.app/",
-    github: "https://github.com/Stivenjs/Api-clima?tab=readme-ov-file",
+    github: "https://github.com/KingDevs/Api-clima",
     image: "/projects/clima.webp",
-    
+    tags: [TAGS.REACT, TAGS.TAILWIND],
   },
   {
     title: "MixMeet",
     description:
-      "MixMeet es una aplicación web diseñada para gestionar y explorar eventos en tiempo real. Desarrollada con React, Tailwind CSS y Firebase, MixMeet ofrece una experiencia intuitiva y atractiva para usuarios que buscan descubrir y participar en eventos locales.",
+      "MixMeet es una plataforma de eventos en tiempo real desarrollada por nuestro equipo para facilitar la exploración y gestión de eventos locales. Con una interfaz amigable y un diseño responsivo, ofrece a los usuarios una experiencia de descubrimiento atractiva.",
     link: "https://mix-meet.vercel.app/",
+    github: "https://github.com/Stivenjs/MixMeet",
     image: "/projects/mixmeet.webp",
-    
+    tags: [
+      TAGS.REACT,
+      TAGS.TAILWIND,
+      TAGS.FIREBASE,
+      TAGS.EXPRESS,
+      TAGS.SOCKET,
+      TAGS.VERCEL,
+    ],
   },
-]
+  {
+    title: "Reffinato",
+    description:
+      "Reffinato es una tienda en línea de ropa de playa, donde nuestro equipo desarrolló tanto el backend como el frontend. Utilizamos tecnologías como React, Express, PostgreSQL y Azure para construir una plataforma completa, escalable y eficiente.",
+    image: "/projects/reffinnato1.webp",
+    tags: [
+      TAGS.REACT,
+      TAGS.TAILWIND,
+      TAGS.POSTGRES,
+      TAGS.EXPRESS,
+      TAGS.SOCKET,
+      TAGS.FIREBASE,
+      TAGS.AZURE,
+      TAGS.RAILWAY,
+    ],
+  },
+];
 ---
 
 <div class="flex flex-col gap-y-16">
   {
-    PROJECTS.map(({ image, title, description,  link, github }) => (
-    <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
-  <div class="w-full md:w-1/2">
-    <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
-      <img alt="Recién llegado vs 5 años en Nueva Zelanda" class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105" loading="lazy" src={image} />
-    </div>
-  </div>
+    PROJECTS.map(({ image, title, description, link, github, tags }) => (
+      <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
+        <div class="w-full md:w-1/2">
+          <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
+            <img
+              alt={title}
+              class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105"
+              loading="lazy"
+              src={image}
+            />
+          </div>
+        </div>
 
-  <div class="w-full md:w-1/2 md:max-w-lg">
-    <h3 class="text-2xl font-bold text-gray-800 dark:text-gray-100">
-      {title}
-    </h3>
-    <div class="flex flex-wrap mt-2">
-      
-
-      <div class="mt-2 text-gray-700 dark:text-gray-400">{description}</div>
-      <footer class="flex items-end justify-start mt-4 gap-x-4">
-          {github && (
-            <LinkButton href={github}>
-              <GitHub class="size-6" />
-              Code
-              
-            </LinkButton>
-          )}
-          {link && (
-            <LinkButton href={link}>
-              <Link class="size-4" />
-              Preview
-            </LinkButton>
-          )}
-        </footer>
-    </div>
-  </div>
-</article>
+        <div class="w-full md:w-1/2 md:max-w-lg">
+          <h3 class="text-2xl font-bold text-gray-800 dark:text-gray-100">
+            {title}
+          </h3>
+          <div class="flex flex-wrap mt-2 gap-2">
+            {tags &&
+              tags.map((tag) => (
+                <span class={`px-2 py-1 text-sm rounded ${tag.class}`}>
+                  <tag.icon class="inline-block w-4 h-4 mr-1 align-middle" />{" "}
+                  {tag.name}
+                </span>
+              ))}
+          </div>
+          <p class="mt-2 text-gray-700 dark:text-gray-400">{description}</p>
+          <footer class="flex items-center justify-start mt-4 gap-x-4">
+            {github && (
+              <LinkButton href={github}>
+                <GitHub class="size-6" />
+                Código
+              </LinkButton>
+            )}
+            {link && (
+              <LinkButton href={link}>
+                <Link class="size-4" />
+                Vista previa
+              </LinkButton>
+            )}
+          </footer>
+        </div>
+      </article>
     ))
   }
 </div>
-
-
-
